@@ -1,5 +1,5 @@
 # node-archieml-boilerplate
-A boilerplate for connecting to Google Drive, getting the file contents, then spitting it out with archieML.
+A boilerplate for connecting to Google Drive, getting the file contents, then spitting it out with [ArchieML](https://github.com/newsdev/archieml-js).
 
 ## Installation
 `npm install`
