@@ -8,6 +8,7 @@ A boilerplate for connecting to Google Drive, getting the file contents, then sp
 
 ### Enable the Drive API
 Use [this wizard](https://console.developers.google.com/start/api?id=drive) to create or select a project in the Google Developers Console and automatically enable the API.
+
 1. In the sidebar on the left, select Consent screen. Select an EMAIL ADDRESS, enter a PRODUCT NAME if not already set, and click the Save button.
 2. In the sidebar on the left, select APIs & auth and then Credentials. In the new tab that opens, click Create new Client ID.
 3. Select the application type Installed application, the installed application type Other, and click the Create Client ID button.
