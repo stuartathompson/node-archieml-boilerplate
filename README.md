@@ -10,9 +10,11 @@ A boilerplate for connecting to Google Drive, getting the file contents, then sp
 Use [this wizard](https://console.developers.google.com/start/api?id=drive) to create or select a project in the Google Developers Console and automatically enable the API.
 
 1. In the sidebar on the left, select Consent screen. Select an EMAIL ADDRESS, enter a PRODUCT NAME if not already set, and click the Save button.
-2. In the sidebar on the left, select APIs & auth and then Credentials. In the new tab that opens, click Create new Client ID.
-3. Select the application type Installed application, the installed application type Other, and click the Create Client ID button.
-4. Click the Download JSON button under your new client ID. Move this file to your working directory and rename it client_secret.json.
+2. In the sidebar on the left, select APIs & auth and then Credentials.
+3. In the new tab that opens, click Create new Client ID.
+4. Select the application type *Installed application*, the installed application type Other, and click the Create Client ID button.
+5. Click the Download JSON button under your new client ID.
+6. Move this file to your working directory and *rename it* client_secret.json.
 
 ### 2. Authorize the app
 You must run `node index.js` once to authorize the app. After that, you don't need to authorize again because the information is stored in the file system.

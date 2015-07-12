@@ -110,7 +110,7 @@ app.get('/:key',function(req,res){
         uri: exportLink
     }, function(err, body) {
         if (err) {
-            console.log('Getting file contents failed: ' + err);
+            console.log('Getting file contents failed.', err);
             return;
         }
 
@@ -134,7 +134,7 @@ app.get('/:key',function(req,res){
       fileId: fileId
     },function(err,response){
       if(err){
-        console.log('Getting export link failed: ' + err);
+        console.log('Getting export link failed.', err);
         return;
       }
 
