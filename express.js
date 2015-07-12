@@ -7,9 +7,6 @@ var express = require('express');
 var app = express();
 
 app.get('/:key',function(req,res){
-  // Edit the file ID for the Google Doc. Be sure it's set to the "Share" preferences to "anyone on the internet"
-  var fileId = '1EJdvZQmQahxB6WHD2-Pe_0_SCPMV1DEf1fWXbD-deQE';
-
   // Overall varibales
   var SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly'];
   var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
