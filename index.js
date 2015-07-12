@@ -5,7 +5,7 @@ var googleAuth = require('google-auth-library');
 var archieml = require('archieml');
 
 // Edit the file ID for the Google Doc. Be sure it's set to the "Share" preferences to "anyone on the internet"
-var fileId = '1EJdvZQmQahxB6WHD2-Pe_0_SCPMV1DEf1fWXbD-deQE';
+var fileId = 'YOUR_GOOGLE_DOCS_KEY_HERE';
 
 // Overall varibales
 var SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly'];
@@ -99,25 +99,31 @@ function storeToken(token) {
   console.log('Token stored to ' + TOKEN_PATH);
 }
 
+/**
+ * Get the actual file contents as plain text
+ *
+ * @param {String} The URL to request the content from
+ */
 function getFileContents(exportLink){
   oauth2Client.request({
       method: 'GET',
       uri: exportLink
   }, function(err, body) {
       if (err) {
-          console.log(err);
+          console.log('Getting file contents failed: ' + err);
           return;
       }
-      // remove Google Docs comments
-      body = body.replace(/\[[a-z]{1,2}\]/g,'');
 
-      console.log(body);
       var data = archieml.load(body);
-
-      console.log(data);
+      console.log('Output: ' + data);
   });
 }
 
+/**
+ * Get the download link, also called the export link, from the file response
+ *
+ * @param {Object} Google Drive authorization
+ */
 function getExportLink(auth){
   var service = google.drive('v2');
   var request = service.files.get({
@@ -125,7 +131,7 @@ function getExportLink(auth){
     fileId: fileId
   },function(err,response){
     if(err){
-      console.log(err);
+      console.log('Getting export link failed: ' + err);
       return;
     }
 

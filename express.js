@@ -102,26 +102,34 @@ app.get('/:key',function(req,res){
     console.log('Token stored to ' + TOKEN_PATH);
   }
 
+  /**
+   * Get the actual file contents as plain text
+   *
+   * @param {String} The URL to request the content from
+   */
   function getFileContents(exportLink){
     oauth2Client.request({
         method: 'GET',
         uri: exportLink
     }, function(err, body) {
         if (err) {
-            console.log(err);
+            console.log('Getting file contents failed: ' + err);
             return;
         }
-        // remove Google Docs comments
-        body = body.replace(/\[[a-z]{1,2}\]/g,'');
 
-        console.log(body);
+        // Process with archieML
         var data = archieml.load(body);
 
-        console.log(data);
+        // Send the response
         res.json(data);
     });
   }
 
+  /**
+   * Get the download link, also called the export link, from the file response
+   *
+   * @param {Object} Google Drive authorization
+   */
   function getExportLink(auth){
     var service = google.drive('v2');
     var request = service.files.get({
@@ -129,7 +137,7 @@ app.get('/:key',function(req,res){
       fileId: fileId
     },function(err,response){
       if(err){
-        console.log(err);
+        console.log('Getting export link failed: ' + err);
         return;
       }
 
