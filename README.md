@@ -6,7 +6,7 @@ A boilerplate for connecting to Google Drive, getting the file contents, then sp
 
 ## Setup
 
-### Enable the Drive API
+### 1. Enable the Drive API
 Use [this wizard](https://console.developers.google.com/start/api?id=drive) to create or select a project in the Google Developers Console and automatically enable the API.
 
 1. In the sidebar on the left, select Consent screen. Select an EMAIL ADDRESS, enter a PRODUCT NAME if not already set, and click the Save button.
@@ -14,7 +14,7 @@ Use [this wizard](https://console.developers.google.com/start/api?id=drive) to c
 3. Select the application type Installed application, the installed application type Other, and click the Create Client ID button.
 4. Click the Download JSON button under your new client ID. Move this file to your working directory and rename it client_secret.json.
 
-### Authorize the app
+### 2. Authorize the app
 You must run `node index.js` once to authorize the app. After that, you don't need to authorize again because the information is stored in the file system.
 
 1. `node index.js`
@@ -22,14 +22,14 @@ You must run `node index.js` once to authorize the app. After that, you don't ne
 3. Click the Accept button.
 4. Copy the code you're given, paste it into the command-line prompt, and press Enter.
 
-### Run the app
+### 3. Run the app
 You can choose to run the app from a web server using Express or from the terminal itself.
 
-#### From express
+#### A) From express
 1. `node express.js`
 2. Go to `localhost:3000/YOUR_DOCUMENT_KEY_HERE`
 
-#### From Terminal
+#### B) From Terminal
 1. Edit the file `index.js` to include your key in the variable `fileId`
 2. Open Terminal
 3. `node index.js`
