@@ -23,9 +23,9 @@ You must run `node index.js` once to authorize the app. After that, you don't ne
 4. Copy the code you're given, paste it into the command-line prompt, and press Enter.
 
 ### 3. Run the app
-You can choose to run the app from a web server using Express or from the terminal itself.
+You can choose to run the app from a web server using Express or from the terminal itself (perhaps useful for testing).
 
-#### A) From express
+#### A) Using Express
 1. `node express.js`
 2. Go to `localhost:3000/YOUR_DOCUMENT_KEY_HERE`
 
