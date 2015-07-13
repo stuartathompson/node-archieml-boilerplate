@@ -27,6 +27,8 @@ You must run `node index.js` once to authorize the app. After that, you don't ne
 ### 3. Run the app
 You can choose to run the app from a web server using Express or from the terminal itself (perhaps useful for testing).
 
+- Note: You must set the Google Doc ["Share" settings](https://support.google.com/docs/answer/2494886?hl=en) to "anyone on the internet."
+
 #### A) Using Express
 1. `node express.js`
 2. Go to `localhost:3000/YOUR_DOCUMENT_KEY_HERE`
@@ -35,3 +37,5 @@ You can choose to run the app from a web server using Express or from the termin
 1. Edit the file `index.js` to include your key in the variable `fileId`
 2. Open Terminal
 3. `node index.js`
+
+## Troubleshooting

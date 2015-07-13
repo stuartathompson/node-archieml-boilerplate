@@ -7,6 +7,8 @@ var express = require('express');
 var app = express();
 
 app.get('/:key',function(req,res){
+  // Get Google Doc KEY from URL
+  var fileId = req.param('key');
   // Overall varibales
   var SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly'];
   var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
